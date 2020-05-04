@@ -1,0 +1,17 @@
+version: "2" #docker-composeのバージョンを指定
+services:
+  jsp_servlet_semi_2020:
+    container_name: jsp_servlet_semi_2020
+    build: . #Dockerfileをビルド
+    ports: #2020年度グループ2
+      - "8208:8080" #ポート8202番の開放
+
+    privileged: true
+    tty: true
+    command: /sbin/init
+
+
+networks:
+  default:
+    external:
+      name: semi2020
